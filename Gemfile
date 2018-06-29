@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Brings back `assigns` and `assert_template` to your Rails tests
+gem 'rails-controller-testing'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -57,9 +59,21 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
+  # Strategies for cleaning databases in Ruby.
+  # Can be used to ensure a clean state for testing.
+  gem 'database_cleaner'
+  # Collection of testing matchers extracted from Shoulda
+  gem 'shoulda-matchers', require: false
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :development, :test do
+  # Factory Bot S2 Rails
+  gem 'factory_bot_rails'
+  # RSpec for Rails-3+
+  gem 'rspec-rails', '~> 3.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
