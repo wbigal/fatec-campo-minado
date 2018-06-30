@@ -10,4 +10,8 @@
 
 class Round < ApplicationRecord
   belongs_to :winner, class_name: 'Player', optional: true
+
+  has_many :items, class_name: 'RoundItem',
+                   inverse_of: 'round',
+                   dependent: :destroy
 end

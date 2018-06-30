@@ -15,6 +15,10 @@ RSpec.describe Round, type: :model do
     expect(create(:round)).to be_valid
   end
 
+  describe '#items' do
+    it { is_expected.to have_many(:items) }
+  end
+
   describe '#winner' do
     it { is_expected.to belong_to(:winner) }
   end
