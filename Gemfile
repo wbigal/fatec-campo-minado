@@ -35,8 +35,13 @@ gem 'rails-controller-testing'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# A library for generating fake data such as names, addresses,
+# and phone numbers.
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 
 group :development, :test do
+  # Loads environment variables from `.env`
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and
   #   get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -47,8 +52,6 @@ group :development do
   gem 'annotate'
   # A static analysis security vulnerability scanner for RoR applications
   gem 'brakeman', require: false
-  # Loads environment variables from `.env`
-  gem 'dotenv-rails'
   # Access an interactive console on exception pages or by calling 'console'
   #   anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
