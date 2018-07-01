@@ -1,0 +1,22 @@
+doctype html
+html[lang="pt-br"]
+  head
+    title
+      | Fatec Campo Minado
+    = csrf_meta_tags
+    = csp_meta_tag
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    = stylesheet_link_tag    'application', media: 'all'
+  body
+    = render 'layouts/head'
+    - flash.each do |key, value|
+        div[class="#{flash_class(key)} alert-dismissible fade show" role="alert"]
+          = value
+          button.close[type="button" data-dismiss="alert" aria-label="Close"]
+            span[aria-hidden="true"]
+              | ×
+    main[role="main"]
+      = yield
+    = javascript_include_tag 'application'
+    = yield(:js)

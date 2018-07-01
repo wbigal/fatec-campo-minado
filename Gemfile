@@ -35,9 +35,16 @@ gem 'rails-controller-testing'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Bootstrap 4 Ruby Gem for Rails / Sprockets and Compass.
+gem 'bootstrap', '~> 4.1.1'
+# A gem to automate using jQuery with Rails
+gem 'jquery-rails'
 # A library for generating fake data such as names, addresses,
 # and phone numbers.
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+# Slim is a template language whose goal is reduce the syntax to the essential
+# parts without becoming cryptic.
+gem 'slim-rails'
 
 group :development, :test do
   # Loads environment variables from `.env`
