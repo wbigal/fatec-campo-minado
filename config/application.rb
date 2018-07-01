@@ -7,5 +7,7 @@ Bundler.require(*Rails.groups)
 module FatecCampoMinado
   class Application < Rails::Application
     config.load_defaults 5.2
+
+    config.autoload_paths << Rails.root.join('app', 'services', '**', '*.rb')
   end
 end

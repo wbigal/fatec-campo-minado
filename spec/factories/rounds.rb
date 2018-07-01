@@ -10,5 +10,8 @@
 
 FactoryBot.define do
   factory :round do
+    trait(:on_game) do
+      winner_id nil
+    end
   end
 end
