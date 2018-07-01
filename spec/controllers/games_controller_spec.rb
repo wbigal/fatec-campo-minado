@@ -17,7 +17,7 @@ RSpec.describe GamesController, type: :controller do
       before do
         process :index, method: :get
       end
-      
+
       it { expect(response).to render_template('index') }
       it { expect(assigns(:round)).to be_blank }
     end

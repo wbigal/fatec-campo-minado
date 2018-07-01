@@ -1,3 +1,13 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-game {
+  width: 351px;
+  height: 351px;
+  border: 1px solid #dee2e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

@@ -35,8 +35,10 @@ RSpec.describe Rounds::Create, type: :service do
     context 'when there is on game round' do
       before { create(:round, :on_game) }
 
-      it 'raises error Rounds::AlredyRoundOnGame' do
-        expect { Rounds::Create.call }.to raise_error(Rounds::AlredyRoundOnGame)
+      it 'raises error Rounds::AlreadyRoundOnGame' do
+        expect { Rounds::Create.call }.to raise_error(
+          Rounds::AlreadyRoundOnGame
+        )
       end
     end
   end

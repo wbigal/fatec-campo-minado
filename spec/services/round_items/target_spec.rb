@@ -38,7 +38,7 @@ RSpec.describe RoundItems::Target, type: :service do
       end
 
       it do
-        expect { player.reload }.to change(player, :score).from(0).to(10)
+        expect { player.reload }.to change(player, :score).from(0).to(5)
       end
     end
 

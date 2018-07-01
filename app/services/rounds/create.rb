@@ -1,10 +1,10 @@
 module Rounds
-  class AlredyRoundOnGame < StandardError; end
+  class AlreadyRoundOnGame < StandardError; end
 
   class Create < ServiceBase
     def call
       Round.transaction do
-        raise AlredyRoundOnGame if Round.on_game.any?
+        raise AlreadyRoundOnGame if Round.on_game.any?
         create_round
       end
     end

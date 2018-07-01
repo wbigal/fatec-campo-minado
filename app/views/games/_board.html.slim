@@ -1,7 +1,7 @@
 h2 Rodada #{@round.id}
-table#minefield.table-bordered
-  - 5.times do
+table#minefield.table-bordered*{ data: { 'round-id': @round.id } }
+  - 5.times do |row|
     tr
-      - 5.times do
-        td
-          button
+      - 5.times do |column|
+        td*{ data: { row: row, column: column } }
+          button.field-area-button

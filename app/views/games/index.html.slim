@@ -1,9 +1,21 @@
 .container
   .row
-    .col-lg-12
-      h1 Campo Minado
+    h1.col-lg-12 Campo Minado
+    .col-lg-8
+      #board-area
+        = render 'board_area'
+    .col-lg-4
+      h2 Pontuação
+      div
+        | Sua pontuação
+        | &nbsp;
+        span#player-score ...
+      h2 Os 10 melhores
+      #top-ten-players
 
-      - if @round.present?
-        = render 'board'
-      - else
-        h2 Nenhum jogo disponível
+
+= content_for(:stylesheet) do
+    = stylesheet_link_tag 'rounds/items/targeted', 'games'
+
+= content_for(:js) do
+    = javascript_include_tag 'rounds/items/targeted', 'games'

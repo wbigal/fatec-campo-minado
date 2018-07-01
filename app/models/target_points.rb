@@ -1,5 +1,5 @@
 module TargetPoints
-  NOTHING = 10
+  NOTHING = 5
   BOMB = -50
   FLAG = 100
 

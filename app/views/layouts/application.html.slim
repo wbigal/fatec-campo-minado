@@ -8,6 +8,7 @@ html[lang="pt-br"]
     meta[charset="utf-8"]
     meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
     = stylesheet_link_tag    'application', media: 'all'
+    = yield(:stylesheet)
   body
     = render 'layouts/head'
     - flash.each do |key, value|

@@ -17,6 +17,7 @@ module RoundItems
         update_round_item
         update_player_score
         set_winner_of_round
+        targeted_item
       end
     end
 
@@ -37,6 +38,15 @@ module RoundItems
       return false if round.winner?
       return false unless round_item.flag?
       round.update(winner: player)
+    end
+
+    def targeted_item
+      Hash[
+        winner_id: round.winner_id,
+        player_score: player.score,
+        targeted_by_id: player.id,
+        target_type: round_item.target_type
+      ]
     end
 
     def player

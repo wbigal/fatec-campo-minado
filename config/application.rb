@@ -9,5 +9,6 @@ module FatecCampoMinado
     config.load_defaults 5.2
 
     config.autoload_paths << Rails.root.join('app', 'services', '**', '*.rb')
+    config.autoload_paths << Rails.root.join('app', 'forms', '**', '*.rb')
   end
 end
