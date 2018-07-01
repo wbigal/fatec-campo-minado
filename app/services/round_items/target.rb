@@ -45,7 +45,9 @@ module RoundItems
         winner_id: round.winner_id,
         player_score: player.score,
         targeted_by_id: player.id,
-        target_type: round_item.target_type
+        target_type: round_item.target_type,
+        row: @row,
+        column: @column
       ]
     end
 

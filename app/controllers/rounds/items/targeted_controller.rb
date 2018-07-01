@@ -12,6 +12,7 @@ module Rounds
 
         if @targeted_form.valid?
           create_item_targeted
+          notify_all
           render :create, status: :created, json: @round_item
         else
           render :create, status: :unprocessable_entity
@@ -42,6 +43,10 @@ module Rounds
         params.require(:rounds_items_targeted_form).permit(
           :row, :column
         )
+      end
+
+      def notify_all
+        ActionCable.server.broadcast('round', round_item: @round_item)
       end
     end
   end

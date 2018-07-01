@@ -12,6 +12,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += %w[
+  cable.js
   games.coffee games.scss
   rounds/items/targeted.coffee rounds/items/targeted.scss
+  channels/round.coffee
 ]
