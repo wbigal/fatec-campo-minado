@@ -12,7 +12,7 @@
 
 FactoryBot.define do
   factory :player do
-    name Faker::Cat.name
+    name Faker::Cat.unique.name
     session_id SecureRandom.hex
   end
 end

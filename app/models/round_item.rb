@@ -31,4 +31,6 @@ class RoundItem < ApplicationRecord
     greater_than_or_equal_to: 0,
     less_than: 5
   }
+
+  scope :available, -> { where(targeted_by_id: nil) }
 end

@@ -19,4 +19,8 @@ class Round < ApplicationRecord
                    dependent: :destroy
 
   scope :on_game, -> { where(winner: nil) }
+
+  def winner?
+    winner.present?
+  end
 end

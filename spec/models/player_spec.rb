@@ -38,9 +38,5 @@ RSpec.describe Player, type: :model do
   describe '#name' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_length_of(:name).is_at_most(15) }
-    it do
-      create(:player)
-      is_expected.to validate_uniqueness_of(:name).case_insensitive
-    end
   end
 end

@@ -21,8 +21,5 @@ class Player < ApplicationRecord
                          uniqueness: { case_sensitive: false }
 
   validates :score, presence: true, numericality: { only_integer: true }
-
-  validates :name, presence: true,
-                   length: { maximum: 15 },
-                   uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 15 }
 end
