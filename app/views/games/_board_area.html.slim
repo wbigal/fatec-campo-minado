@@ -1,8 +1,15 @@
 - if @round.present?
   = render 'board'
-  em São 10 bombas e apenas uma bandeira.
   #next-game.d-none
     = link_to 'Ir para a próxima rodada', games_path, remote: true, method: :post, class: 'btn btn-primary'
+  p.game-info
+    em São 5 bombas e apenas uma bandeira.
+    br
+    em Jogadas opacas foram feitas por outros jogadores.
+    br
+    em Campo vazio vale +5 pontos, bomba -50 e bandeira +100.
+    br
+    em Objetivo: encontrar a bandeira evitando as bombas.
 - else
   h2 Nenhum jogo disponível
   .new-game

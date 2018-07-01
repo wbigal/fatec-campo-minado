@@ -2,6 +2,7 @@ $(document).on 'click', '.field-area-button', ->
   $this = $(this)
   $parentTd = $this.parent()
   $minefield = $('#minefield')
+  $playerMessage = $('#player-mesages')
   roundId = $minefield.data('round-id')
   row = $parentTd.data('row')
   column = $parentTd.data('column')
@@ -22,9 +23,20 @@ $(document).on 'click', '.field-area-button', ->
         $('.field-area-button').hide()
       return
     complete: (data) ->
+      if (data.status == 201)
+        roundItem = data.responseJSON
+        $parentTd.addClass('my-field-area')
+        if (roundItem.target_type == 'nothing')
+          $playerMessage.text('Você descobriu uma área vazia.')
+        else if (roundItem.target_type == 'bomb')
+          $playerMessage.text('Não! Você pisou em uma mina!')
+        else if (roundItem.target_type == 'flag')
+          $playerMessage.text('Você encontrou a bandeira \\o/')
       return
-    error: ->
-      $this.show()
-      alert 'Jogada inválida'
+    error: (data, status) ->
+      if (data.status == 404)
+        $playerMessage.text('Parece que alguém chegou primeiro. Esta área do campo não está mais disponivel.');
+      else
+        $this.show()
       return
   return

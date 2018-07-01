@@ -9,5 +9,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+#player-mesages {
+  height: 4em;
+}
+
+#next-game {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.game-info em {
+  font-size: 0.8rem;
 }

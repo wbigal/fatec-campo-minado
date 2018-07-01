@@ -2,14 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.target-opponent-opacity {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
 .target-bomb {
-  background-image: image-url('bomb.png')
+  @extend .target-opponent-opacity;
+  background-image: image-url('bomb.png');
 }
 
 .target-nothing {
+  @extend .target-opponent-opacity;
   background-color: #1fc600;
 }
 
 .target-flag {
-  background-image: image-url('flag.png')
+  @extend .target-opponent-opacity;
+  background-image: image-url('flag.png');
+}
+
+.my-field-area {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
 }
