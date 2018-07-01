@@ -1,0 +1,15 @@
+// Place all the styles related to the rounds/items/targeted controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.target-bomb {
+  background-image: image-url('bomb.png')
+}
+
+.target-nothing {
+  background-color: #1fc600;
+}
+
+.target-flag {
+  background-image: image-url('flag.png')
+}

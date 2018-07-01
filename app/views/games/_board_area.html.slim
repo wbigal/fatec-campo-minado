@@ -1,0 +1,9 @@
+- if @round.present?
+  = render 'board'
+  em São 10 bombas e apenas uma bandeira.
+  #next-game.d-none
+    = link_to 'Ir para a próxima rodada', games_path, remote: true, method: :post, class: 'btn btn-primary'
+- else
+  h2 Nenhum jogo disponível
+  .new-game
+    = link_to 'Ir para a próxima rodada', games_path, remote: true, method: :post, class: 'btn btn-primary'
