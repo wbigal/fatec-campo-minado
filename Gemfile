@@ -32,7 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # Brings back `assigns` and `assert_template` to your Rails tests
 gem 'rails-controller-testing'
-
+# ActiveModel::Serializer implementation and Rails hooks
+gem 'active_model_serializers'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 # Bootstrap 4 Ruby Gem for Rails / Sprockets and Compass.

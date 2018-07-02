@@ -9,10 +9,10 @@
       div
         | Sua pontuação
         | &nbsp;
-        span#player-score ...
+        span#player-score
+          = @player.present? ? @player.score : '...'
       h2 Os 10 melhores
       #top-ten-players
-
 
 = content_for(:stylesheet) do
     = stylesheet_link_tag 'rounds/items/targeted', 'games'

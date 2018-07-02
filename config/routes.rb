@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :rounds, only: [] do
     resources :items, only: [] do
       collection do
-        resources :targeted, only: [:create],
+        resources :targeted, only: %i[index create],
                              controller: 'rounds/items/targeted'
       end
     end

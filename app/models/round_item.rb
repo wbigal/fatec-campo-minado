@@ -33,4 +33,5 @@ class RoundItem < ApplicationRecord
   }
 
   scope :available, -> { where(targeted_by_id: nil) }
+  scope :targeted, -> { where.not(targeted_by_id: nil) }
 end

@@ -5,6 +5,13 @@ module Rounds
       before_action :load_round
       before_action :load_player
 
+      def index
+        @round_items = @round.items.targeted.includes(:targeted_by, :round)
+        render json: @round_items,
+               each_serializer: Rounds::Items::TargetedSerializer,
+               serializer_params: { session_id: session.id }
+      end
+
       def create
         @targeted_form = Rounds::Items::TargetedForm.new(
           targeted_params

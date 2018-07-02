@@ -1,3 +1,30 @@
+$(document).ready ->
+  $minefield = $('#minefield')
+  roundId = $minefield.data('round-id')
+  $.ajax
+    type: 'GET'
+    contentType: 'application/json'
+    url: '/rounds/' + roundId + '/items/targeted'
+    beforeSend: ->
+      return
+    success: (data) ->
+      $(data).each (index, fieldData) ->
+        if fieldData.targeted
+          $("#field-#{fieldData.row}-#{fieldData.column}").addClass('target-'+ fieldData.target_type)
+          $("#field-action-#{fieldData.row}-#{fieldData.column}").hide()
+
+          if (fieldData.targeted.my_point)
+            $("#field-#{fieldData.row}-#{fieldData.column}").addClass('my-field-area')
+
+        if (fieldData.winner_id)
+          $('#next-game').removeClass('d-none')
+          $('.field-area-button').hide()
+      return
+    complete: (data) ->
+      return
+    error: (data, status) ->
+      return
+
 $(document).on 'click', '.field-area-button', ->
   $this = $(this)
   $parentTd = $this.parent()
