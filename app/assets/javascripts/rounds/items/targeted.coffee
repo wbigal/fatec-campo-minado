@@ -1,4 +1,4 @@
-$(document).ready ->
+@loadRoundItems = ->
   $minefield = $('#minefield')
   roundId = $minefield.data('round-id')
   $.ajax
@@ -67,3 +67,6 @@ $(document).on 'click', '.field-area-button', ->
         $this.show()
       return
   return
+
+$(document).ready ->
+  loadRoundItems()
