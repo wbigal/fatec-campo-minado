@@ -42,6 +42,7 @@ module RoundItems
 
     def targeted_item
       Hash[
+        round_id: @round.id,
         winner_id: round.winner_id,
         player_score: player.score,
         targeted_by_id: player.id,
